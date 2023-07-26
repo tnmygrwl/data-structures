@@ -65,18 +65,14 @@ class LinkedList(object):
 
     def delete(self, index):
         (prev, node) = self.find(index)
-        if node.next:
-            next = node.next
-            prev.next = next
-        else:
-            prev.next = None
+        prev.next = node.next if node.next else None
 
     def __str__(self):
         node = self.head
         i = 0
         list = ''
         while node:
-            list += str(i) + ': ' + str(node.val) +'\n'
+            list += f'{str(i)}: {str(node.val)}' + '\n'
             node = node.next
             i += 1
         return list
