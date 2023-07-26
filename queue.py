@@ -15,11 +15,9 @@ class Queue(object):
     # Dequeue val from queue
     def dequeue(self):
         if self.Q:
-            val = self.Q.pop(0)
-            return val
-        else:
-            print('Error: Nothing to dequeue')
-            return 'Error'
+            return self.Q.pop(0)
+        print('Error: Nothing to dequeue')
+        return 'Error'
 
     # Check if queue empty
     def isEmpty(self):

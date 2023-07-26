@@ -15,11 +15,9 @@ class Stack(object):
     # Pop value off stack
     def pop(self):
         if self.S:
-            val = self.S.pop()
-            return val
-        else:
-            print('Error: Nothing to pop')
-            return 'Error'
+            return self.S.pop()
+        print('Error: Nothing to pop')
+        return 'Error'
 
     # Check if stack empty
     def isEmpty(self):
@@ -29,9 +27,8 @@ class Stack(object):
     def peek(self):
         if self.S:
             return self.S[-1]
-        else:
-            print('Error: Nothing to peek')
-            return 'Error'
+        print('Error: Nothing to peek')
+        return 'Error'
 
     def __str__(self):
         return str(self.S)

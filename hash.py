@@ -7,8 +7,7 @@ class HashTable(object):
     def __init__(self, buckets=10):
         self.buckets = buckets
         self.T = []
-        for _ in range(buckets):
-            self.T.append([])
+        self.T.extend([] for _ in range(buckets))
 
     def hashIt(self, val):
         return hash(val) % self.buckets
@@ -19,10 +18,7 @@ class HashTable(object):
 
     def search(self, val):
         key = self.hashIt(val)
-        if val in self.T[key]:
-            return True
-        else:
-            return False
+        return val in self.T[key]
 
     def __str__(self):
         fullStr = 'This Hash Table has format:'
